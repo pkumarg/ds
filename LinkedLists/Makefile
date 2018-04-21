@@ -1,7 +1,9 @@
 CC=gcc
 
-SRC= $(shell find . -name "*.c")
-INCPATH=-I./
+SRC= $(shell find ./src -name "*.c")
+INCPATH=-I./hdr
+
+CFLAGS=-g -Wall
 
 TARGET=list
 
@@ -11,7 +13,7 @@ test: $(TARGET)
 	./$(TARGET) 
 
 $(TARGET): $(SRC)
-	$(CC) $(INCPATH) $^ -o $@
+	$(CC) $(CFLAGS) $(INCPATH) $^ -o $@
 
 clean:
 	rm -f $(TARGET)

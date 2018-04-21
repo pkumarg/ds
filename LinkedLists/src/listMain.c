@@ -5,9 +5,10 @@ Node *homeNode = NULL;
 
 int main()
 {
-    printf("Creating linked list of 20 random elements\n");
+    const int NUM_ELEMENTS = 10;
+    printf("Creating linked list of %d random elements\n", NUM_ELEMENTS);
 
-    for(int iter = 0; iter < 20; iter++)
+    for(int iter = 0; iter < NUM_ELEMENTS; iter++)
     {
 	appendNode(&homeNode, (rand() % 100));
     }
@@ -20,7 +21,6 @@ int main()
     printf("Swap nodes: ");
     scanf("%d%d", &val1, &val2);
     swapNodes(&homeNode, val1, val2);
-    printf("Swapped list: ");
     printList(homeNode);
 
     return 0;
